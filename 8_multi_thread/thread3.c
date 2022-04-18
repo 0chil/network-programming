@@ -50,8 +50,6 @@ int main(int argc, char **argv)
         exit(0);
     }
 
-
-
     sem_unlink(SEM_NAME);
     return 0;
 }
@@ -62,8 +60,8 @@ void *threadA_main(void *org)
     for (i = 0; i < 60000; i++)
     {
         sem_wait(sem);
-        counter += 1;
-        printf("Thread A increases the counter by 1: Counter - %d\n", counter);
+        counter += 2;
+        printf("Thread A increases the counter by 2: Counter - %d\n", counter);
         sem_post(sem);
     }
     return NULL;
@@ -75,8 +73,8 @@ void *threadB_main(void *org)
     for (i = 0; i < 60000; i++)
     {
         sem_wait(sem);
-        counter += 1;
-        printf("Thread B increases the counter by 1: Counter - %d\n", counter);
+        counter += 3;
+        printf("Thread B increases the counter by 3: Counter - %d\n", counter);
         sem_post(sem);
     }
     return NULL;
