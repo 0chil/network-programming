@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "netdb.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "in.h": "c",
+        "socket.h": "c"
     }
 }
