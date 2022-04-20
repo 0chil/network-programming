@@ -11,6 +11,7 @@
 #include <fcntl.h>
 
 #define MAX_EVENTS	10
+#define BUFSIZ 3
 void errProc(const char *);
 int makeNbSocket(int);
 

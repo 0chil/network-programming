@@ -18,8 +18,6 @@ int main(int argc, char **argv)
 	pthread_create(&thread_id_2, NULL, threadB_main, NULL);
 	pthread_join(thread_id_1, NULL);
 	pthread_join(thread_id_2, NULL);
-    pthread_detach(thread_id_1);
-    pthread_detach(thread_id_2);
     
 	
 	pthread_mutex_destroy(&mutex);
