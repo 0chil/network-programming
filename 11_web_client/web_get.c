@@ -226,7 +226,7 @@ int main(int argc, char **argv)
             {
                 if (encoding == length)
                 {
-                    if (p - body >= remaining) // 끝 - 시작 >= 받은 바디 길이보다 크면
+                    if (p - body >= remaining) // 끝 - 시작 >= 받은 바디 길이보다 크면, 일반적으로 ==일거임
                     {
                         printf("%.*s", remaining, body);
                         break;
