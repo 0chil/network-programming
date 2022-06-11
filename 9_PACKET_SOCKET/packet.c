@@ -59,7 +59,12 @@ int main()
     sockAddr.sll_protocol = htons(ETH_P_ARP);
     sockAddr.sll_ifindex = if_nametoindx("eth0");
     sockAddr.sll_halen = ETH_ALEN;
-    sockAddr.sll_addr = {0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff};
+    sockAddr.sll_addr[0] = 0xff;
+    sockAddr.sll_addr[1] = 0xff;
+    sockAddr.sll_addr[2] = 0xff;
+    sockAddr.sll_addr[3] = 0xff;
+    sockAddr.sll_addr[4] = 0xff;
+    sockAddr.sll_addr[5] = 0xff;
 
     pSocket = socket(AF_PACKET, SOCK_DGRAM, htons(ETH_P_ALL));
     buff = (struct arp_packet *)malloc(sizeof(struct arp_packet));
